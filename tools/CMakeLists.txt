@@ -172,9 +172,9 @@ set (CMAKE_INSTALL_PREFIX "${INSTALL_DIR}" CACHE INTERNAL "" FORCE)
 
 set (BIN_LETTER "")
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
-  set (BIN_LETTER "d")
+  set (BIN_LETTER "")
 elseif ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo")
-  set (BIN_LETTER "i")
+  set (BIN_LETTER "")
 endif()
 
 # Get all used variables: OS_WITH_BIT, COMPILER
