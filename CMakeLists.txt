@@ -249,12 +249,15 @@ endif()
 
 # hide CMAKE_INSTALL_PREFIX from a user
 set (CMAKE_INSTALL_PREFIX "${INSTALL_DIR}" CACHE INTERNAL "" FORCE)
+option(USE_CONDA_BUILD "Use conda build" OFF)
 
 set (BIN_LETTER "")
-if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
-  set (BIN_LETTER "d")
-elseif ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo")
-  set (BIN_LETTER "i")
+if (NOT USE_CONDA_BUILD)
+  if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+    set (BIN_LETTER "d")
+  elseif ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo")
+    set (BIN_LETTER "i")
+  endif()
 endif()
 
 # Get all used variables: OS_WITH_BIT, COMPILER
@@ -910,7 +913,7 @@ if (SINGLE_GENERATOR)
   endif()
 endif()
 
-option(USE_CONDA_BUILD "Use conda build" OFF)
+
 if (USE_CONDA_BUILD)
   set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
   set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")

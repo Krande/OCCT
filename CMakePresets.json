@@ -17,6 +17,7 @@
         "CMAKE_PREFIX_PATH": "$env{LIBRARY_PREFIX};$env{LIBRARY_PREFIX}/include;$env{LIBRARY_PREFIX}/lib;$env{LIBRARY_PREFIX}/bin",
         "CMAKE_INSTALL_PREFIX": "$env{LIBRARY_PREFIX}",
         "INSTALL_DIR_LAYOUT": "UNIX",
+        "INSTALL_DIR_INCLUDE": "$env{LIBRARY_PREFIX}/opencascade/include",
         "BUILD_MODULE_Draw": "OFF",
         "3RDPARTY_DIR": "$env{LIBRARY_PREFIX}",
         "USE_TBB": "OFF",
