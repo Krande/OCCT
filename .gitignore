@@ -53,3 +53,7 @@ win64
 /stamp*
 /build*
 /install
+
+.idea/
+.env.json
+cmake-build*/

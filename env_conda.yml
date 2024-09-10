@@ -1,0 +1,10 @@
+name: occt-env
+channels:
+  - conda-forge
+dependencies:
+  - freetype
+  - freeimage
+  - fontconfig
+  - rapidjson
+  - cmake
+  - ninja

@@ -1,0 +1,33 @@
+{
+  "version": 6,
+  "include": [
+    ".env.json"
+  ],
+  "configurePresets": [
+    {
+      "name": "win-local",
+      "inherits": ["env-vars"],
+      "generator": "Ninja",
+      "hidden": false,
+      "environment": {
+        "LIBRARY_PREFIX": "$env{PREFIX}/Library"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_PREFIX_PATH": "$env{LIBRARY_PREFIX};$env{LIBRARY_PREFIX}/include;$env{LIBRARY_PREFIX}/lib;$env{LIBRARY_PREFIX}/bin",
+        "CMAKE_INSTALL_PREFIX": "$env{LIBRARY_PREFIX}",
+        "INSTALL_DIR_LAYOUT": "UNIX",
+        "BUILD_MODULE_Draw": "OFF",
+        "3RDPARTY_DIR": "$env{LIBRARY_PREFIX}",
+        "USE_TBB": "OFF",
+        "USE_VTK": "OFF",
+        "GLEW_LIBRARY": "$env{LIBRARY_PREFIX}/lib/glew32.lib",
+        "TBB_LIBRARY_RELEASE": "$env{LIBRARY_PREFIX}/lib/tbb.lib",
+        "USE_FREEIMAGE": "ON",
+        "USE_RAPIDJSON": "ON",
+        "BUILD_RELEASE_DISABLE_EXCEPTIONS": "OFF",
+        "USE_CONDA_BUILD": "ON"
+      }
+    }
+  ]
+}
